@@ -8,3 +8,8 @@ fi
 
 . `brew --prefix`/etc/profile.d/z.sh
 export _Z_DATA=~/dotfiles/z/.z
+
+# nvm
+
+export NVM_DIR="/Users/${USER}/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
