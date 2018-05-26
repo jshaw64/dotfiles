@@ -13,3 +13,7 @@ export _Z_DATA=~/dotfiles/z/.z
 
 export NVM_DIR="/Users/${USER}/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# fzf
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
