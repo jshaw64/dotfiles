@@ -1,3 +1,7 @@
+# Private
+
+. "/Users/${USER}/dotfiles/private_config"
+
 # Prezto
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
