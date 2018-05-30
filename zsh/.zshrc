@@ -21,3 +21,10 @@ export NVM_DIR="/Users/${USER}/.nvm"
 # fzf
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# zsh hooks
+
+function chpwd()
+{
+  ls -Alth
+}
