@@ -9,6 +9,12 @@ for aliasgroup in "/Users/${USER}/dotfiles/zsh/aliases/"*; do;
   . "$aliasgroup"
 done
 
+# Functions
+
+for functiongroup in "/Users/${USER}/dotfiles/zsh/functions/"*; do;
+  . "$functiongroup"
+done
+
 # Prezto
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
