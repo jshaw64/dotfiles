@@ -19,6 +19,10 @@ for functiongroup in "/Users/${USER}/dotfiles/zsh/functions/"*; do;
   . "$functiongroup"
 done
 
+for functiongroup in "${dotfiles_local_dir_functions}/"*; do;
+  . "$functiongroup"
+done
+
 # Prezto
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
