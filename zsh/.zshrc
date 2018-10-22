@@ -2,6 +2,13 @@
 
 . "/Users/${USER}/dotfiles/private_config"
 
+
+# Aliases
+
+for aliasgroup in "/Users/${USER}/dotfiles/zsh/aliases/"*; do;
+  . "$aliasgroup"
+done
+
 # Prezto
 
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
