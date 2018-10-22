@@ -4,3 +4,10 @@
     zcompile "$zcompdump"
   fi
 } &!
+
+if (( $+commands[fortune] )); then
+  if [[ -t 0 || -t 1 ]]; then
+    fortune -a computers linuxcookie
+    print
+  fi
+fi
