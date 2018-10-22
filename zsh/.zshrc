@@ -1,6 +1,6 @@
 # Private
 
-. "/Users/${USER}/dotfiles/private_config"
+. "/Users/${USER}/.jfsenv"
 
 
 # Aliases
