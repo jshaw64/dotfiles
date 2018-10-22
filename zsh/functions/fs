@@ -1,0 +1,14 @@
+mkd() {
+  mkdir $1
+  cd $1
+}
+
+statsme()
+{
+  find "$1" | xargs -I'{}' bash -c "stat \"{}\"" | tee tree.txt
+}
+
+pathme()
+{
+  echo "${PWD}/$1" | pbcopy
+}
