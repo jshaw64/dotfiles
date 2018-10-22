@@ -1,0 +1,12 @@
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias cpwd="pwd | pbcopy"
+alias cdwd='cd "$(pbpaste)"'
+
+alias rm='rm -i'
+alias rmd='rmdir'
+alias unl='unlink'
+
+alias pd='popd'
