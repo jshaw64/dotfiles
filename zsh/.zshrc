@@ -9,6 +9,10 @@ for aliasgroup in "/Users/${USER}/dotfiles/zsh/aliases/"*; do;
   . "$aliasgroup"
 done
 
+for aliasgroup in "${dotfiles_local_dir_aliases}/"*; do;
+  . "$aliasgroup"
+done
+
 # Functions
 
 for functiongroup in "/Users/${USER}/dotfiles/zsh/functions/"*; do;
