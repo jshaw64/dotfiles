@@ -5,7 +5,7 @@
 
 # Aliases
 
-for aliasgroup in "/Users/${USER}/dotfiles/zsh/aliases/"*; do;
+for aliasgroup in "${dotfiles_pub_dir_aliases}/"*; do;
   . "$aliasgroup"
 done
 
