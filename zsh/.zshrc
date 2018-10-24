@@ -15,7 +15,7 @@ done
 
 # Functions
 
-for functiongroup in "/Users/${USER}/dotfiles/zsh/functions/"*; do;
+for functiongroup in "${dotfiles_pub_dir_functions}/"*; do;
   . "$functiongroup"
 done
 
