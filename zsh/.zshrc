@@ -2,6 +2,13 @@
 
 . "/Users/${USER}/.jfsenv"
 
+export ANDROID_HOME="/Users/${USER}/Library/Android/sdk"
+export JAVA_HOME=$(/usr/libexec/java_home)
+export NODE_HOME="/usr/local/bin/node"
+export NPM_HOME="/usr/local/bin/npm"
+
+export PATH="${PATH}:${NODE_HOME}:${NPM_HOME}:${ANDROID_HOME}/platform-tools:${JAVA_HOME}"
+
 
 # Aliases
 
