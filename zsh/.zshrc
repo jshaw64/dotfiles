@@ -1,4 +1,4 @@
-# Private
+# Env
 
 . "/Users/${USER}/.jfsenv"
 
