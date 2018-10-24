@@ -7,7 +7,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export NODE_HOME="/usr/local/bin/node"
 export NPM_HOME="/usr/local/bin/npm"
 
-export PATH="${PATH}:${NODE_HOME}:${NPM_HOME}:${ANDROID_HOME}/platform-tools:${JAVA_HOME}"
+. "${dotfiles_local_dir_env}/.env"
+
+export PATH="${PATH}:${MAVEN_HOME}/bin:${M2_HOME}:${GRADLE_HOME}/bin:${CHROMEDRIVER}:${NODE_HOME}:${NPM_HOME}:${ANDROID_HOME}/platform-tools:${JAVA_HOME}"
 
 
 # Aliases
