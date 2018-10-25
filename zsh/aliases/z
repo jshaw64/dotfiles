@@ -1,0 +1,2 @@
+alias zl='z -l | tail -n 5'
+alias zt='z -t | tail -n 5'

@@ -1,0 +1,7 @@
+verifyme() {
+  unzip $1
+  cd Payload/*.app
+  codesign -v -d --entitlements - .
+  cd ../..
+  rm -rf Payload
+}

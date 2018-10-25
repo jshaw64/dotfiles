@@ -1,0 +1,2 @@
+alias readme='touch README.md && git commit -m "Initial commit"'
+alias mainme='touch main.sh && chmod u+x main.sh'

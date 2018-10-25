@@ -1,0 +1,5 @@
+alias gpristine='git reset --hard && git clean -dfx'
+alias cdg='cd $(git rev-parse --show-cdup)'
+alias gcam='gc --amend'
+alias gcamv='gc --amend --no-verify'
+alias gcn='gc --no-verify'
