@@ -5,7 +5,11 @@ mkd() {
 
 statsme()
 {
-  find "$1" | xargs -I'{}' bash -c "stat \"{}\"" | tee tree.txt
+  local out="$2"
+  if [ -z "$out" ]; then
+    out=/dev/null
+  fi
+  find "$1" | xargs -I'{}' bash -c "stat \"{}\"" | tee "$out"
 }
 
 pathme()
