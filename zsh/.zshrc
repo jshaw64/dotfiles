@@ -38,6 +38,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+export HISTSIZE=100000
+
 # Z
 
 . `brew --prefix`/etc/profile.d/z.sh
