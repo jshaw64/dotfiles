@@ -117,4 +117,15 @@ map <C-p><C-g> :GFiles<cr>
 map <C-p><C-s> :GFiles?<cr>
 map <C-p><C-h> :History<cr>
 
+
+" neomake
+
+Plug 'https://github.com/neomake/neomake'
+Plug 'benjie/neomake-local-eslint.vim'
+
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_scss_enabled_markers = ['sass-lint']
+
+autocmd BufWritePost *.js,*.json,*.css,*.scss Neomake
+
 call plug#end()
