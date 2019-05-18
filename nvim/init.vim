@@ -98,4 +98,23 @@ nnoremap <leader>rc :vsplit $MYVIMRC<cr>
 nnoremap <leader>Rc :source $MYVIMRC<cr>
 nnoremap <leader>cp :let @*=expand("%:p:h")<CR>
 
+"
+" Plugins
+"
+
+" fzf
+
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+Plug 'pbogut/fzf-mru.vim'
+
+map <C-p><C-p> :FZFMru<cr>
+map <C-p><C-r> :FZF<cr>
+map <C-p><C-g> :GFiles<cr>
+map <C-p><C-s> :GFiles?<cr>
+map <C-p><C-h> :History<cr>
+
 call plug#end()
