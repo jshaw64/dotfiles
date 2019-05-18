@@ -160,4 +160,17 @@ Plug 'prettier/vim-prettier'
 autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
 let g:prettier#config#parser = 'babylon'
 
+" easymotion
+
+Plug 'easymotion/vim-easymotion'
+
+let g:move_key_modifier = 'C'
+let g:EasyMotion_do_mapping = 0
+let g:EasyMotion_smartcase = 1
+
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+nmap <leader>s <Plug>(easymotion-overwin-f)
+nmap <leader>s <Plug>(easymotion-overwin-f2)
+
 call plug#end()
