@@ -128,4 +128,11 @@ let g:neomake_scss_enabled_markers = ['sass-lint']
 
 autocmd BufWritePost *.js,*.json,*.css,*.scss Neomake
 
+" deoplete
+
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'carlitux/deoplete-ternjs'
+
+let g:deoplete#enable_at_startup = 1
+
 call plug#end()
