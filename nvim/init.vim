@@ -102,6 +102,18 @@ nnoremap <leader>cp :let @*=expand("%:p:h")<CR>
 " Plugins
 "
 
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-repeat'
+Plug 'matze/vim-move'
+Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'tomtom/tcomment_vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+
 " fzf
 
 Plug '/usr/local/opt/fzf'
