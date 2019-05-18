@@ -173,4 +173,11 @@ map <Leader>k <Plug>(easymotion-k)
 nmap <leader>s <Plug>(easymotion-overwin-f)
 nmap <leader>s <Plug>(easymotion-overwin-f2)
 
+" easyalign
+
+Plug 'junegunn/vim-easy-align'
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 call plug#end()
