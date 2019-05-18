@@ -39,6 +39,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 export HISTSIZE=100000
+export SAVEHIST=100000
 
 # Z
 
