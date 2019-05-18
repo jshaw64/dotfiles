@@ -255,4 +255,10 @@ colorscheme base16-default-dark
 
 au BufRead,BufNewFile *.tx,*.tsx set filetype=javascript.jsx
 
+" md
+
+au FileType markdown :set spell
+au FileType markdown map <Bar> vip :EasyAlign*<Bar><Enter>
+au BufRead,BufNewFile *.md setlocal textwidth=120
+
 call plug#end()
