@@ -229,4 +229,10 @@ if has('conceal')
   set conceallevel=0 concealcursor=niv
 endif
 
+" base16
+
+Plug 'chriskempson/base16-vim'
+
+colorscheme base16-default-dark
+
 call plug#end()
