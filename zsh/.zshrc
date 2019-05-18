@@ -43,7 +43,7 @@ export HISTSIZE=100000
 # Z
 
 . `brew --prefix`/etc/profile.d/z.sh
-export _Z_DATA=~/dotfiles/z/.z
+export _Z_DATA=~/z/.z
 
 # nvm
 
