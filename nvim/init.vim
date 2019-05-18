@@ -247,4 +247,12 @@ Plug 'chriskempson/base16-vim'
 
 colorscheme base16-default-dark
 
+"
+" File Types
+"
+
+" js
+
+au BufRead,BufNewFile *.tx,*.tsx set filetype=javascript.jsx
+
 call plug#end()
