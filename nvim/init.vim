@@ -121,6 +121,11 @@ Plug 'junegunn/fzf.vim'
 
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
+imap <c-x><c-k> <plug>(fzf-complete-word)
+imap <c-x><c-f> <plug>(fzf-complete-path)
+imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+imap <c-x><c-l> <plug>(fzf-complete-line)
+
 Plug 'pbogut/fzf-mru.vim'
 
 map <C-p><C-p> :FZFMru<cr>
@@ -128,7 +133,7 @@ map <C-p><C-r> :FZF<cr>
 map <C-p><C-g> :GFiles<cr>
 map <C-p><C-s> :GFiles?<cr>
 map <C-p><C-h> :History<cr>
-
+map <C-p><C-f> :Ag<cr>
 
 " neomake
 
