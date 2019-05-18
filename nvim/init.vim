@@ -153,4 +153,11 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
+" prettier
+
+Plug 'prettier/vim-prettier'
+
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
+let g:prettier#config#parser = 'babylon'
+
 call plug#end()
