@@ -180,4 +180,16 @@ Plug 'junegunn/vim-easy-align'
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" schlepp
+
+Plug 'zirrostig/vim-schlepp'
+
+vmap <C-h> <Plug>SchleppLeft
+vmap <C-l> <Plug>SchleppRight
+
+vmap  Dk <Plug>SchleppDupUp
+vmap  Dj <Plug>SchleppDupDown
+vmap  Dh <Plug>SchleppDupLeft
+vmap  Dl <Plug>SchleppDupRight
+
 call plug#end()
