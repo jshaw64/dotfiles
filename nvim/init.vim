@@ -129,6 +129,7 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 map <C-p><C-r> :FZF<cr>
 map <C-p><C-g> :GFiles<cr>
 map <C-p><C-s> :GFiles?<cr>
+map <C-p><C-m> :Commits<cr>
 map <C-p><C-h> :History<cr>
 map <C-p><C-f> :Ag<cr>
 
