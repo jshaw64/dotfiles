@@ -1,6 +1,6 @@
 # Env
 
-. "/Users/${USER}/.jfsenv"
+. ~/Documents/jfs/global/dotfiles-private/.jfsenv
 
 export ANDROID_HOME="/Users/${USER}/Library/Android/sdk"
 export JAVA_HOME=$(/usr/libexec/java_home)
