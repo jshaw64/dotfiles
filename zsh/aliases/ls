@@ -1,0 +1,11 @@
+alias lsl='ls -Alh'
+alias lsd='ls -Alth'
+# By size
+alias lsSD='ls -AlhgT -S'
+alias lsSA='ls -AlhT -S -r'
+# By modification time
+alias lsMA='ls -AlhgT -t'
+alias lsMD='ls -AlhgT -t -r'
+# By access time
+alias lsAA='ls -AlhgT -u'
+alias lsAD='ls -AlhgT -u -r'

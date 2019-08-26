@@ -1,0 +1,4 @@
+popme()
+{
+  git checkout 'stash@{'$1'}' -- $2
+}

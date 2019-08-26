@@ -1,0 +1,3 @@
+alias idx='e "$(pwdg)"/public/index.html'
+alias pkg='e "$(pwdg)"/package.json'
+alias pkgp='bat "$(pwdg)"/package.json'

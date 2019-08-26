@@ -1,0 +1,18 @@
+mkd() {
+  mkdir $1
+  cd $1
+}
+
+statsme()
+{
+  local out="$2"
+  if [ -z "$out" ]; then
+    out=/dev/null
+  fi
+  find "$1" | xargs -I'{}' bash -c "stat \"{}\"" | tee "$out"
+}
+
+pathme()
+{
+  echo "${PWD}/$1" | pbcopy
+}

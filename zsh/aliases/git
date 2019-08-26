@@ -1,0 +1,7 @@
+alias gpristine='git reset --hard && git clean -dfx'
+alias gcam='gc --amend'
+alias gcamv='gc --amend --no-verify'
+alias gcn='gc --no-verify'
+alias cdg='cd "$(git rev-parse --show-cdup)"'
+alias pwdg='echo "$(git rev-parse --show-toplevel)"'
+alias commit='gl head -n 1 --format=%B | pbc'

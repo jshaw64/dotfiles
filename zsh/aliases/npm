@@ -1,0 +1,7 @@
+alias npi='npm install'
+alias npr='npm run'
+alias nprb='npm run build'
+alias npmp='npm publish'
+alias esl='$(npm bin)/eslint --fix'
+alias karma='$(npm root)/karma/bin/karma'
+alias pkg='nvim package.json'
