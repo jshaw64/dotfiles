@@ -43,7 +43,15 @@ export SAVEHIST=100000
 
 # Z
 
-. `brew --prefix`/etc/profile.d/z.sh
+case $OSTYPE in
+("darwin"*)
+  . `brew --prefix`/etc/profile.d/z.sh
+;;
+(*)
+  . ~/z.sh
+;;
+esac
+
 export _Z_DATA=~/z/.z
 
 # nvm
