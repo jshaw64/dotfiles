@@ -110,8 +110,6 @@ Plug 'tpope/vim-repeat'
 Plug 'matze/vim-move'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tomtom/tcomment_vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 
 " fzf
@@ -260,7 +258,9 @@ colorscheme base16-default-dark
 
 " js
 
-au BufRead,BufNewFile *.tx,*.tsx set filetype=javascript.jsx
+Plug 'HerringtonDarkholme/yats.vim'
+
+au BufRead,BufNewFile *.ts,*.tsx set filetype=typescript.tsx
 
 " md
 
