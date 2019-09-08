@@ -3,9 +3,14 @@
 . ~/Documents/jfs/global/dotfiles-private/.jfsenv
 
 export ANDROID_HOME="/Users/${USER}/Library/Android/sdk"
-export JAVA_HOME=$(/usr/libexec/java_home)
 export NODE_HOME="/usr/local/bin/node"
 export NPM_HOME="/usr/local/bin/npm"
+
+case $OSTYPE in
+("darwin"*)
+  export JAVA_HOME=$(/usr/libexec/java_home)
+;;
+esac
 
 . "${dotfiles_local_dir_env}/.env"
 

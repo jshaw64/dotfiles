@@ -4,6 +4,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Base Config
 "
 
+set updatetime=300
+
 set guicursor=n-v-c:block-Cursor-blinkon0
 set cursorline
 set sidescrolloff=999
@@ -15,13 +17,14 @@ set matchtime=10
 
 set tabstop=2
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
 set shiftround
 
 set relativenumber
 set number
 set numberwidth=1
 
+set noshowmode
 set laststatus=2
 set title
 set nowrap
@@ -98,6 +101,11 @@ nnoremap <leader>rc :vsplit $MYVIMRC<cr>
 nnoremap <leader>Rc :source $MYVIMRC<cr>
 nnoremap <leader>cp :let @*=expand("%:p:h")<CR>
 
+" buffers
+
+map <leader><C-p> :bprevious<CR>
+map <leader><C-n> :bnext<CR>
+
 "
 " Plugins
 "
@@ -110,8 +118,6 @@ Plug 'tpope/vim-repeat'
 Plug 'matze/vim-move'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tomtom/tcomment_vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 
 " fzf
@@ -132,27 +138,30 @@ map <C-p><C-s> :GFiles?<cr>
 map <C-p><C-m> :Commits<cr>
 map <C-p><C-h> :History<cr>
 map <C-p><C-f> :Ag<cr>
+map <C-p><C-b> :Buffers<cr>
 
 Plug 'pbogut/fzf-mru.vim'
 
 map <C-p><C-p> :FZFMru<cr>
 
-" neomake
+" coc
 
-Plug 'https://github.com/neomake/neomake'
-Plug 'benjie/neomake-local-eslint.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_scss_enabled_markers = ['sass-lint']
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gs <Plug>(coc-documentSymbols)
 
-autocmd BufWritePost *.js,*.json,*.css,*.scss Neomake
+nmap <silent> gld <Plug>(coc-diagnostic)
+nmap <silent> gln <Plug>(coc-diagnostic-next)
+nmap <silent> glp <Plug>(coc-diagnostic-prev)
 
-" deoplete
+nmap <silent> <leader>cr <Plug>(coc-rename)
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs'
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-let g:deoplete#enable_at_startup = 1
 
 " neosnippet
 
@@ -171,13 +180,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-
-" prettier
-
-Plug 'prettier/vim-prettier'
-
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-let g:prettier#config#parser = 'babylon'
 
 " easymotion
 
@@ -215,23 +217,21 @@ vmap  Dl <Plug>SchleppDupRight
 
 Plug 'itchyny/lightline.vim'
 
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
-      \ },
-      \ 'separator': { 'left': '|', 'right': '|' },
-      \ 'subseparator': { 'left': '|', 'right': '|' }
-      \ }
+ let g:lightline = {
+\ 'active': {
+\   'left': [ [ 'mode', 'paste' ],
+\             [ 'gitbranch', 'readonly', 'filename', 'modified'] 
+\           ]
+\ },
+\ 'component_function': {
+\   'filename': 'LightlineFilename',
+\   'gitbranch': 'fugitive#head'
+\ }
+\}
+
+function! LightlineFilename()
+  return  expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+endfunction
 
 " indent guides
 
@@ -260,7 +260,9 @@ colorscheme base16-default-dark
 
 " js
 
-au BufRead,BufNewFile *.tx,*.tsx set filetype=javascript.jsx
+Plug 'HerringtonDarkholme/yats.vim'
+
+au BufRead,BufNewFile *.ts,*.tsx set filetype=typescript.tsx
 
 " md
 
@@ -269,3 +271,5 @@ au FileType markdown map <Bar> vip :EasyAlign*<Bar><Enter>
 au BufRead,BufNewFile *.md setlocal textwidth=120
 
 call plug#end()
+
+call coc#add_extension('coc-json', 'coc-tsserver', 'coc-tslint-plugin', 'coc-prettier')

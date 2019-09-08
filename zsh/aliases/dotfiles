@@ -1,6 +1,13 @@
-alias zev='e ${dotfiles_dir}/zsh/.zshenv'
-alias zrc='e ${dotfiles_dir}/zsh/.zshrc'
-alias zpf='e ${dotfiles_dir}/zsh/.zprofile'
-alias vrc='e ${dotfiles_dir}/nvim/init.vim'
-alias tcf='e ${dotfiles_dir}/.tmux.conf'
-alias npmrc='e ~/.npmrc'
+alias dzsh='cd ${dotfiles_dir}/zsh'
+alias dalias='cd ${dotfiles_dir}/zsh/aliases'
+alias dfn='cd ${dotfiles_dir}/zsh/functions'
+
+alias .zshenv='e ${dotfiles_dir}/.zshenv'
+alias .zshrc='e ${dotfiles_dir}/zsh/.zshrc'
+alias .zprofile='e ${dotfiles_dir}/zsh/.zprofile'
+
+alias init.vim='e ${dotfiles_dir}/.config/nvim/init.vim'
+
+alias .tmux.conf='e ${dotfiles_dir}/.tmux.conf'
+
+alias .npmrc='e ~/.npmrc'
