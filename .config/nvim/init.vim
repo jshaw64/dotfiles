@@ -17,7 +17,7 @@ set matchtime=10
 
 set tabstop=2
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
 set shiftround
 
 set relativenumber
