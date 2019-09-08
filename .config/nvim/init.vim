@@ -159,13 +159,6 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
-" prettier
-
-Plug 'prettier/vim-prettier'
-
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-let g:prettier#config#parser = 'babylon'
-
 " easymotion
 
 Plug 'easymotion/vim-easymotion'
@@ -259,4 +252,4 @@ au BufRead,BufNewFile *.md setlocal textwidth=120
 
 call plug#end()
 
-call coc#add_extension('coc-json', 'coc-tsserver', 'coc-tslint-plugin')
+call coc#add_extension('coc-json', 'coc-tsserver', 'coc-tslint-plugin', 'coc-prettier')

@@ -2,5 +2,6 @@
   "diagnostic.errorSign": "X",
   "diagnostic.warningSign": "!",
   "diagnostic.checkCurrentLine": true,
-  "coc.preferences.jumpCommand": "vsplit"
+  "coc.preferences.jumpCommand": "vsplit",
+  "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact"]
 }
