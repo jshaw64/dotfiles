@@ -33,3 +33,15 @@ fbr() {
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
+
+# git commit browser with previews
+fcoc() {
+  local commits commit
+  commits=$(git log --pretty=oneline --abbrev-commit) &&
+  commit=$(echo "$commits" |
+  fzf --ansi --no-sort --reverse --multi --bind 'ctrl-s:toggle-sort' \
+    --header 'Press CTRL-S to toggle sort' \
+    --preview 'grep -o "[a-f0-9]\{7,\}" <<< {} | xargs git show --color=always | head -'$LINES |
+    grep -o "[a-f0-9]\{7,\}") &&
+  git checkout $(echo "$commit" | sed "s/ .*//")
+}
