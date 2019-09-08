@@ -4,6 +4,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Base Config
 "
 
+set updatetime=300
+
 set guicursor=n-v-c:block-Cursor-blinkon0
 set cursorline
 set sidescrolloff=999
@@ -110,8 +112,6 @@ Plug 'tpope/vim-repeat'
 Plug 'matze/vim-move'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tomtom/tcomment_vim'
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 
 " fzf
@@ -137,22 +137,24 @@ Plug 'pbogut/fzf-mru.vim'
 
 map <C-p><C-p> :FZFMru<cr>
 
-" neomake
+" coc
 
-Plug 'https://github.com/neomake/neomake'
-Plug 'benjie/neomake-local-eslint.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_scss_enabled_markers = ['sass-lint']
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gs <Plug>(coc-documentSymbols)
 
-autocmd BufWritePost *.js,*.json,*.css,*.scss Neomake
+nmap <silent> gld <Plug>(coc-diagnostic)
+nmap <silent> gln <Plug>(coc-diagnostic-next)
+nmap <silent> glp <Plug>(coc-diagnostic-prev)
 
-" deoplete
+nmap <silent> <leader>cr <Plug>(coc-rename)
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs'
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
-let g:deoplete#enable_at_startup = 1
 
 " neosnippet
 
@@ -171,13 +173,6 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
-
-" prettier
-
-Plug 'prettier/vim-prettier'
-
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue PrettierAsync
-let g:prettier#config#parser = 'babylon'
 
 " easymotion
 
@@ -260,7 +255,9 @@ colorscheme base16-default-dark
 
 " js
 
-au BufRead,BufNewFile *.tx,*.tsx set filetype=javascript.jsx
+Plug 'HerringtonDarkholme/yats.vim'
+
+au BufRead,BufNewFile *.ts,*.tsx set filetype=typescript.tsx
 
 " md
 
@@ -269,3 +266,5 @@ au FileType markdown map <Bar> vip :EasyAlign*<Bar><Enter>
 au BufRead,BufNewFile *.md setlocal textwidth=120
 
 call plug#end()
+
+call coc#add_extension('coc-json', 'coc-tsserver', 'coc-tslint-plugin', 'coc-prettier')
