@@ -4,6 +4,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Base Config
 "
 
+set updatetime=300
+
 set guicursor=n-v-c:block-Cursor-blinkon0
 set cursorline
 set sidescrolloff=999
@@ -150,6 +152,8 @@ nmap <silent> gln <Plug>(coc-diagnostic-next)
 nmap <silent> glp <Plug>(coc-diagnostic-prev)
 
 nmap <silent> <leader>cr <Plug>(coc-rename)
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 
 " neosnippet
