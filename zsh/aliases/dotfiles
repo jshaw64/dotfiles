@@ -1,3 +1,7 @@
+alias dzsh='cd ${dotfiles_dir}/zsh'
+alias dalias='cd ${dotfiles_dir}/zsh/aliases'
+alias dfn='cd ${dotfiles_dir}/zsh/functions'
+
 alias .zshenv='e ${dotfiles_dir}/.zshenv'
 alias .zshrc='e ${dotfiles_dir}/zsh/.zshrc'
 alias .zprofile='e ${dotfiles_dir}/zsh/.zprofile'
