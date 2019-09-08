@@ -135,22 +135,11 @@ Plug 'pbogut/fzf-mru.vim'
 
 map <C-p><C-p> :FZFMru<cr>
 
-" neomake
+" coc
 
-Plug 'https://github.com/neomake/neomake'
-Plug 'benjie/neomake-local-eslint.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_scss_enabled_markers = ['sass-lint']
 
-autocmd BufWritePost *.js,*.json,*.css,*.scss Neomake
-
-" deoplete
-
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs'
-
-let g:deoplete#enable_at_startup = 1
 
 " neosnippet
 
@@ -269,3 +258,5 @@ au FileType markdown map <Bar> vip :EasyAlign*<Bar><Enter>
 au BufRead,BufNewFile *.md setlocal textwidth=120
 
 call plug#end()
+
+call coc#add_extension('coc-json', 'coc-tsserver', 'coc-tslint-plugin')
