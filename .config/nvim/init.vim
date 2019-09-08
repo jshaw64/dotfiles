@@ -139,6 +139,17 @@ map <C-p><C-p> :FZFMru<cr>
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gs <Plug>(coc-documentSymbols)
+
+nmap <silent> gld <Plug>(coc-diagnostic)
+nmap <silent> gln <Plug>(coc-diagnostic-next)
+nmap <silent> glp <Plug>(coc-diagnostic-prev)
+
+nmap <silent> <leader>cr <Plug>(coc-rename)
 
 
 " neosnippet
