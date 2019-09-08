@@ -101,6 +101,11 @@ nnoremap <leader>rc :vsplit $MYVIMRC<cr>
 nnoremap <leader>Rc :source $MYVIMRC<cr>
 nnoremap <leader>cp :let @*=expand("%:p:h")<CR>
 
+" buffers
+
+map <leader><C-p> :bprevious<CR>
+map <leader><C-n> :bnext<CR>
+
 "
 " Plugins
 "
@@ -133,6 +138,7 @@ map <C-p><C-s> :GFiles?<cr>
 map <C-p><C-m> :Commits<cr>
 map <C-p><C-h> :History<cr>
 map <C-p><C-f> :Ag<cr>
+map <C-p><C-b> :Buffers<cr>
 
 Plug 'pbogut/fzf-mru.vim'
 
