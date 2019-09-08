@@ -24,6 +24,7 @@ set relativenumber
 set number
 set numberwidth=1
 
+set noshowmode
 set laststatus=2
 set title
 set nowrap
@@ -210,23 +211,21 @@ vmap  Dl <Plug>SchleppDupRight
 
 Plug 'itchyny/lightline.vim'
 
-let g:lightline = {
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'readonly', 'filename', 'modified' ] ]
-      \ },
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
-      \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))'
-      \ },
-      \ 'separator': { 'left': '|', 'right': '|' },
-      \ 'subseparator': { 'left': '|', 'right': '|' }
-      \ }
+ let g:lightline = {
+\ 'active': {
+\   'left': [ [ 'mode', 'paste' ],
+\             [ 'gitbranch', 'readonly', 'filename', 'modified'] 
+\           ]
+\ },
+\ 'component_function': {
+\   'filename': 'LightlineFilename',
+\   'gitbranch': 'fugitive#head'
+\ }
+\}
+
+function! LightlineFilename()
+  return  expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+endfunction
 
 " indent guides
 
