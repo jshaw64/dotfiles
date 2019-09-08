@@ -1,5 +1,6 @@
 {
   "diagnostic.errorSign": "X",
   "diagnostic.warningSign": "!",
-  "diagnostic.checkCurrentLine": true
+  "diagnostic.checkCurrentLine": true,
+  "coc.preferences.jumpCommand": "vsplit"
 }
