@@ -5,6 +5,7 @@ alias dfn='cd ${dotfiles_dir}/zsh/functions'
 alias .zshenv='e ${dotfiles_dir}/.zshenv'
 alias .zshrc='e ${dotfiles_dir}/zsh/.zshrc'
 alias .zprofile='e ${dotfiles_dir}/zsh/.zprofile'
+alias .zpreztorc='e ${dotfiles_dir}/zsh/.zpreztorc'
 
 alias init.vim='e ${dotfiles_dir}/.config/nvim/init.vim'
 
