@@ -1,4 +1,5 @@
 {
   "diagnostic.errorSign": "X",
-  "diagnostic.warningSign": "!"
+  "diagnostic.warningSign": "!",
+  "diagnostic.checkCurrentLine": true
 }
