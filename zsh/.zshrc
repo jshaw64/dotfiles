@@ -1,6 +1,6 @@
 # Env
 
-. ~/.jfsenv
+. ~/.jfsenv-bootstrap
 
 export ANDROID_HOME="/Users/${USER}/Library/Android/sdk"
 export NODE_HOME="/usr/local/bin/node"
