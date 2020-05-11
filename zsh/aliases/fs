@@ -11,5 +11,5 @@ alias unl='unlink'
 
 alias pd='popd'
 
-alias luks_mount="$jfs_dir_scripts/luks-utils/mount.sh"
-alias luks_umount="$jfs_dir_scripts/luks-utils/unmount.sh"
+alias luks_mount="$jfs_ns_scripts/luks-utils/mount.sh"
+alias luks_umount="$jfs_ns_scripts/luks-utils/unmount.sh"
