@@ -19,7 +19,7 @@ export PATH="${PATH}:${MAVEN_HOME}/bin:${M2_HOME}:${GRADLE_HOME}/bin:${CHROMEDRI
 
 # Aliases
 
-for aliasgroup in "${dotfiles_pub_dir_aliases}/"*; do;
+for aliasgroup in "${jfs_dir_dotfiles_aliases}/"*; do;
   . "$aliasgroup"
 done
 
@@ -29,7 +29,7 @@ done
 
 # Functions
 
-for functiongroup in "${dotfiles_pub_dir_functions}/"*; do;
+for functiongroup in "${jfs_dir_dotfiles_functions}/"*; do;
   . "$functiongroup"
 done
 
