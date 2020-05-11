@@ -1,6 +1,6 @@
 # Env
 
-. ~/Documents/jfs/global/dotfiles-private/.jfsenv
+. ~/.jfsenv
 
 export ANDROID_HOME="/Users/${USER}/Library/Android/sdk"
 export NODE_HOME="/usr/local/bin/node"
