@@ -1,6 +1,6 @@
 # Env
 
-. ~/Documents/jfs/global/dotfiles-private/.jfsenv
+. ~/.jfsenv-bootstrap
 
 export ANDROID_HOME="/Users/${USER}/Library/Android/sdk"
 export NODE_HOME="/usr/local/bin/node"
@@ -12,28 +12,28 @@ case $OSTYPE in
 ;;
 esac
 
-. "${dotfiles_local_dir_env}/.env"
+. "${jfs_dir_dotfiles_local_env}/.env"
 
 export PATH="${PATH}:${MAVEN_HOME}/bin:${M2_HOME}:${GRADLE_HOME}/bin:${CHROMEDRIVER}:${NODE_HOME}:${NPM_HOME}:${ANDROID_HOME}/platform-tools:${JAVA_HOME}"
 
 
 # Aliases
 
-for aliasgroup in "${dotfiles_pub_dir_aliases}/"*; do;
+for aliasgroup in "${jfs_dir_dotfiles_aliases}/"*; do;
   . "$aliasgroup"
 done
 
-for aliasgroup in "${dotfiles_local_dir_aliases}/"*; do;
+for aliasgroup in "${jfs_dir_dotfiles_local_aliases}/"*; do;
   . "$aliasgroup"
 done
 
 # Functions
 
-for functiongroup in "${dotfiles_pub_dir_functions}/"*; do;
+for functiongroup in "${jfs_dir_dotfiles_functions}/"*; do;
   . "$functiongroup"
 done
 
-for functiongroup in "${dotfiles_local_dir_functions}/"*; do;
+for functiongroup in "${jfs_dir_dotfiles_local_functions}/"*; do;
   . "$functiongroup"
 done
 
