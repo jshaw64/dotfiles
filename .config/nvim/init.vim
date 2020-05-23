@@ -240,6 +240,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nmap  <silent> <leader>pf :CocCommand prettier.formatFile<CR>
 
+Plug 'liuchengxu/vista.vim'
+
 " neosnippet
 
 Plug 'Shougo/neosnippet'
