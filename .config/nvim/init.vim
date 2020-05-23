@@ -143,6 +143,36 @@ map <leader>t vat<Esc>
 map <leader>T vato<Esc>
 
 "
+" Functions / Commands
+"
+
+" paths
+
+function! PathMeRel()
+    :echo @%
+    :let @*=@%
+endfunction
+command! PathMeRel call PathMeRel()
+
+function! PathMeAbs()
+    :echo expand('%:p')
+    :let @*=expand('%:p')
+endfunction
+command! PathMeAbs call PathMeAbs()
+
+function! PathMeAbsDir()
+    :echo expand('%:p:h')
+    :let @*=expand('%:p:h')
+endfunction
+command! PathMeAbsDir call PathMeAbsDir()
+
+function! PathMeFile()
+    :echo expand('%:t')
+    :let @*=expand('%:t')
+endfunction
+command! PathMeFile call PathMeFile()
+
+"
 " Plugins
 "
 
