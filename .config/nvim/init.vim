@@ -212,6 +212,7 @@ map <C-p><C-m> :Commits<cr>
 map <C-p><C-h> :History<cr>
 map <C-p><C-f> :Ag<cr>
 map <C-p><C-b> :Buffers<cr>
+map <C-p><C-t> :Tags<cr>
 
 Plug 'pbogut/fzf-mru.vim'
 
