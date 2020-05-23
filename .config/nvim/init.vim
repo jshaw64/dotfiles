@@ -367,4 +367,4 @@ Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 
-call coc#add_extension('coc-json', 'coc-tsserver', 'coc-tslint-plugin', 'coc-prettier')
+call coc#add_extension('coc-json', 'coc-tsserver', 'coc-tslint-plugin', 'coc-prettier', 'coc-css')
