@@ -79,6 +79,7 @@ noremap <leader>PP gg"_dGP
 noremap <leader>r' "_di'P
 noremap <leader>r" "_di"P
 noremap <leader>r` "_di`P
+noremap <leader>r( "_di(P
 noremap <leader>R "_Dp
 nnoremap <Leader>x /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn
 nnoremap <Leader>X ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN
@@ -99,12 +100,34 @@ noremap <leader>c :noh<cr>
 noremap <leader>w :w<CR>
 nnoremap <leader>rc :vsplit $MYVIMRC<cr>
 nnoremap <leader>Rc :source $MYVIMRC<cr>
-nnoremap <leader>cp :let @*=expand("%:p:h")<CR>
+
 
 " buffers
 
-map <leader><C-p> :bprevious<CR>
-map <leader><C-n> :bnext<CR>
+map <C-b><C-p> :bprevious<CR>
+map <C-b><C-n> :bnext<CR>
+map <C-b><C-d> :bd<CR>
+
+" splits
+
+map <leader>H :vertical resize -10<CR>
+map <leader>L :vertical resize +10<CR>
+
+" blocks
+
+map <leader>yb $V%y
+map <leader>bb 0f{%
+map <leader>db $V%d
+
+" unit tests
+
+map <leader>xit 0wixjk
+map <leader>it 0wx
+
+" html
+
+map <leader>t vat<Esc>
+map <leader>T vato<Esc>
 
 "
 " Plugins
