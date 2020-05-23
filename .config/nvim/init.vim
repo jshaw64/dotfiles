@@ -349,7 +349,7 @@ autocmd VimEnter,Colorscheme * :hi Normal ctermbg=black
 " js
 
 Plug 'HerringtonDarkholme/yats.vim'
-
+Plug 'maxmellon/vim-jsx-pretty'
 au BufRead,BufNewFile *.ts,*.tsx set filetype=typescript.tsx
 
 " md
