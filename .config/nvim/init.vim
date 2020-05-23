@@ -248,6 +248,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
 let g:neosnippet#data_directory = $HOME.'/.cache/nvim/neosnippet'
+let g:neosnippet#snippets_directory = $HOME.'/.config/nvim/snippets'
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
