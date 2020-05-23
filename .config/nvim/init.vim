@@ -176,7 +176,6 @@ command! PathMeFile call PathMeFile()
 " Plugins
 "
 
-Plug 'tpope/vim-fugitive'
 Plug 'qpkorr/vim-renamer'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
@@ -188,6 +187,11 @@ Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tomtom/tcomment_vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 Plug 'scrooloose/nerdtree'
+
+" git
+
+Plug 'tpope/vim-fugitive'
+Plug 'ruanyl/vim-gh-line'
 
 " fzf
 
