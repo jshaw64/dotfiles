@@ -5,3 +5,8 @@ alias npmp='npm publish'
 alias esl='$(npm bin)/eslint --fix'
 alias karma='$(npm root)/karma/bin/karma'
 alias pkg='nvim package.json'
+
+alias yr='yarn run'
+alias yrs='yarn start'
+alias yrb='yarn build'
+alias yrd='yarn dev'
