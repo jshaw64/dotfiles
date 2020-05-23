@@ -3,5 +3,6 @@
   "diagnostic.warningSign": "!",
   "diagnostic.checkCurrentLine": true,
   "coc.preferences.jumpCommand": "vsplit",
-  "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact"]
+  "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "css", "scss"],
+  "coc.preferences.hoverTarget": "preview"
 }
