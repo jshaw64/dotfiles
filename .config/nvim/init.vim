@@ -228,6 +228,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gs <Plug>(coc-documentSymbols)
 
+nmap  gh :call CocActionAsync('doHover')<CR>
+
 nmap <silent> gld <Plug>(coc-diagnostic)
 nmap <silent> gln <Plug>(coc-diagnostic-next)
 nmap <silent> glp <Plug>(coc-diagnostic-prev)
@@ -236,6 +238,7 @@ nmap <silent> <leader>cr <Plug>(coc-rename)
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+nmap  <silent> <leader>pf :CocCommand prettier.formatFile<CR>
 
 " neosnippet
 
