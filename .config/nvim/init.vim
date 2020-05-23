@@ -177,14 +177,17 @@ command! PathMeFile call PathMeFile()
 "
 
 Plug 'tpope/vim-fugitive'
+Plug 'qpkorr/vim-renamer'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-repeat'
 Plug 'matze/vim-move'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tomtom/tcomment_vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+Plug 'scrooloose/nerdtree'
 
 " fzf
 
