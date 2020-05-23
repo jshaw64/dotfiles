@@ -132,6 +132,11 @@ map <leader>db $V%d
 map <leader>xit 0wixjk
 map <leader>it 0wx
 
+fu! JestCurrentFile()
+    :!npx jest %
+endfunction
+command! JestCurrentFile call JestCurrentFile()
+
 " html
 
 map <leader>t vat<Esc>
