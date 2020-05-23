@@ -46,6 +46,8 @@ fi
 export HISTSIZE=100000
 export SAVEHIST=100000
 
+[[ -f "${dotfiles_dir}"/zsh/.p10k.zsh ]] && source "${dotfiles_dir}"/zsh/.p10k.zsh
+
 # Z
 
 case $OSTYPE in
