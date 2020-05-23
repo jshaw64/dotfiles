@@ -107,6 +107,14 @@ nnoremap <leader>Rc :source $MYVIMRC<cr>
 map <C-b><C-p> :bprevious<CR>
 map <C-b><C-n> :bnext<CR>
 map <C-b><C-d> :bd<CR>
+function! CloseAllBuffersButCurrent()
+  let curr = bufnr("%")
+  let last = bufnr("$")
+
+  if curr > 1    | silent! execute "1,".(curr-1)."bd"     | endif
+  if curr < last | silent! execute (curr+1).",".last."bd" | endif
+endfunction
+nmap <C-b><C-q> :call CloseAllBuffersButCurrent()<CR>
 
 " splits
 
