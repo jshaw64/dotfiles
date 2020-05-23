@@ -358,6 +358,13 @@ au FileType markdown :set spell
 au FileType markdown map <Bar> vip :EasyAlign*<Bar><Enter>
 au BufRead,BufNewFile *.md setlocal textwidth=120
 
+
+"
+" Load-last plugins
+"
+
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
 call coc#add_extension('coc-json', 'coc-tsserver', 'coc-tslint-plugin', 'coc-prettier')
