@@ -57,6 +57,10 @@ case $OSTYPE in
 ;;
 esac
 
+# forgit
+
+. "${jfs_dir_app}"/forgit.plugin.zsh
+
 export _Z_DATA=~/z/.z
 
 # nvm
