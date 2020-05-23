@@ -336,9 +336,12 @@ endif
 " base16
 
 Plug 'chriskempson/base16-vim'
+Plug 'jacoborus/tender.vim'
 
-colorscheme base16-default-dark
+" colorscheme base16-default-dark
+colorscheme tender
 
+autocmd VimEnter,Colorscheme * :hi Normal ctermbg=black
 "
 " File Types
 "
