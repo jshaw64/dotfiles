@@ -261,6 +261,11 @@ if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
 
+" ctags
+
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+
 " easymotion
 
 Plug 'easymotion/vim-easymotion'
