@@ -1,13 +1,14 @@
-alias dzsh='cd ${dotfiles_dir}/zsh'
-alias dalias='cd ${dotfiles_dir}/zsh/aliases'
-alias dfn='cd ${dotfiles_dir}/zsh/functions'
+alias dzsh='cd ${jfs_dir_dotfiles}/zsh'
+alias dalias='cd ${jfs_dir_dotfiles}/zsh/aliases'
+alias dfn='cd ${jfs_dir_dotfiles}/zsh/functions'
 
-alias .zshenv='e ${dotfiles_dir}/.zshenv'
-alias .zshrc='e ${dotfiles_dir}/zsh/.zshrc'
-alias .zprofile='e ${dotfiles_dir}/zsh/.zprofile'
+alias .zshenv='e ${jfs_dir_dotfiles}/.zshenv'
+alias .zshrc='e ${jfs_dir_dotfiles}/zsh/.zshrc'
+alias .zprofile='e ${jfs_dir_dotfiles}/zsh/.zprofile'
+alias .zpreztorc='e ${jfs_dir_dotfiles}/zsh/.zpreztorc'
 
-alias init.vim='e ${dotfiles_dir}/.config/nvim/init.vim'
+alias init.vim='e ${jfs_dir_dotfiles}/.config/nvim/init.vim'
 
-alias .tmux.conf='e ${dotfiles_dir}/.tmux.conf'
+alias .tmux.conf='e ${jfs_dir_dotfiles}/.tmux.conf'
 
 alias .npmrc='e ~/.npmrc'

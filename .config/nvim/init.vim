@@ -79,6 +79,7 @@ noremap <leader>PP gg"_dGP
 noremap <leader>r' "_di'P
 noremap <leader>r" "_di"P
 noremap <leader>r` "_di`P
+noremap <leader>r( "_di(P
 noremap <leader>R "_Dp
 nnoremap <Leader>x /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn
 nnoremap <Leader>X ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN
@@ -99,26 +100,98 @@ noremap <leader>c :noh<cr>
 noremap <leader>w :w<CR>
 nnoremap <leader>rc :vsplit $MYVIMRC<cr>
 nnoremap <leader>Rc :source $MYVIMRC<cr>
-nnoremap <leader>cp :let @*=expand("%:p:h")<CR>
+
 
 " buffers
 
-map <leader><C-p> :bprevious<CR>
-map <leader><C-n> :bnext<CR>
+map <C-b><C-p> :bprevious<CR>
+map <C-b><C-n> :bnext<CR>
+map <C-b><C-d> :bd<CR>
+function! CloseAllBuffersButCurrent()
+  let curr = bufnr("%")
+  let last = bufnr("$")
+
+  if curr > 1    | silent! execute "1,".(curr-1)."bd"     | endif
+  if curr < last | silent! execute (curr+1).",".last."bd" | endif
+endfunction
+nmap <C-b><C-q> :call CloseAllBuffersButCurrent()<CR>
+
+" splits
+
+map <leader>H :vertical resize -10<CR>
+map <leader>L :vertical resize +10<CR>
+
+" blocks
+
+map <leader>yb $V%y
+map <leader>bb 0f{%
+map <leader>db $V%d
+
+" unit tests
+
+map <leader>xit 0wixjk
+map <leader>it 0wx
+
+fu! JestCurrentFile()
+    :!npx jest %
+endfunction
+command! JestCurrentFile call JestCurrentFile()
+
+" html
+
+map <leader>t vat<Esc>
+map <leader>T vato<Esc>
+
+"
+" Functions / Commands
+"
+
+" paths
+
+function! PathMeRel()
+    :echo @%
+    :let @*=@%
+endfunction
+command! PathMeRel call PathMeRel()
+
+function! PathMeAbs()
+    :echo expand('%:p')
+    :let @*=expand('%:p')
+endfunction
+command! PathMeAbs call PathMeAbs()
+
+function! PathMeAbsDir()
+    :echo expand('%:p:h')
+    :let @*=expand('%:p:h')
+endfunction
+command! PathMeAbsDir call PathMeAbsDir()
+
+function! PathMeFile()
+    :echo expand('%:t')
+    :let @*=expand('%:t')
+endfunction
+command! PathMeFile call PathMeFile()
 
 "
 " Plugins
 "
 
-Plug 'tpope/vim-fugitive'
+Plug 'qpkorr/vim-renamer'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-repeat'
 Plug 'matze/vim-move'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tomtom/tcomment_vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+Plug 'scrooloose/nerdtree'
+
+" git
+
+Plug 'tpope/vim-fugitive'
+Plug 'ruanyl/vim-gh-line'
 
 " fzf
 
@@ -139,6 +212,7 @@ map <C-p><C-m> :Commits<cr>
 map <C-p><C-h> :History<cr>
 map <C-p><C-f> :Ag<cr>
 map <C-p><C-b> :Buffers<cr>
+map <C-p><C-t> :Tags<cr>
 
 Plug 'pbogut/fzf-mru.vim'
 
@@ -154,6 +228,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gs <Plug>(coc-documentSymbols)
 
+nmap  gh :call CocActionAsync('doHover')<CR>
+
 nmap <silent> gld <Plug>(coc-diagnostic)
 nmap <silent> gln <Plug>(coc-diagnostic-next)
 nmap <silent> glp <Plug>(coc-diagnostic-prev)
@@ -162,6 +238,9 @@ nmap <silent> <leader>cr <Plug>(coc-rename)
 
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
+nmap  <silent> <leader>pf :CocCommand prettier.formatFile<CR>
+
+Plug 'liuchengxu/vista.vim'
 
 " neosnippet
 
@@ -169,6 +248,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
 let g:neosnippet#data_directory = $HOME.'/.cache/nvim/neosnippet'
+let g:neosnippet#snippets_directory = $HOME.'/.config/nvim/snippets'
 
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
 smap <C-k> <Plug>(neosnippet_expand_or_jump)
@@ -180,6 +260,11 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+
+" ctags
+
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
 
 " easymotion
 
@@ -241,7 +326,7 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
 let g:indent_guides_color_change_percent = 1
 let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 2
+let g:indent_guides_start_level = 5
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=darkgrey
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=darkgrey
 if has('conceal')
@@ -251,9 +336,12 @@ endif
 " base16
 
 Plug 'chriskempson/base16-vim'
+Plug 'jacoborus/tender.vim'
 
-colorscheme base16-default-dark
+" colorscheme base16-default-dark
+colorscheme tender
 
+autocmd VimEnter,Colorscheme * :hi Normal ctermbg=black
 "
 " File Types
 "
@@ -261,7 +349,7 @@ colorscheme base16-default-dark
 " js
 
 Plug 'HerringtonDarkholme/yats.vim'
-
+Plug 'maxmellon/vim-jsx-pretty'
 au BufRead,BufNewFile *.ts,*.tsx set filetype=typescript.tsx
 
 " md
@@ -270,6 +358,13 @@ au FileType markdown :set spell
 au FileType markdown map <Bar> vip :EasyAlign*<Bar><Enter>
 au BufRead,BufNewFile *.md setlocal textwidth=120
 
+
+"
+" Load-last plugins
+"
+
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end()
 
-call coc#add_extension('coc-json', 'coc-tsserver', 'coc-tslint-plugin', 'coc-prettier')
+call coc#add_extension('coc-json', 'coc-tsserver', 'coc-tslint-plugin', 'coc-prettier', 'coc-css')

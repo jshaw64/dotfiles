@@ -8,4 +8,4 @@ bind-key -T copy-mode-vi Enter send-keys -X copy-pipe "reattach-to-user-namespac
 # http://stackoverflow.com/a/39741226
 
 set -g default-shell $SHELL
-set -g default-command "reattach-to-user-namespace -l ${SHELL}"
+; set -g default-command "reattach-to-user-namespace -l ${SHELL}"
