@@ -61,7 +61,7 @@ esac
 
 # forgit
 
-. "${jfs_dir_app}"/forgit.plugin.zsh
+. "${jfs_ns_app}"/forgit.plugin.zsh
 
 export _Z_DATA=~/z/.z
 
