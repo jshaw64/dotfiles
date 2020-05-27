@@ -1,7 +1,7 @@
 td_today()
 {
     (
-        cd "$jfs_dir_td"
+        cd "$jfs_dir_docs_td"
         local today="$( date +'%Y-%m-%d' )"
         [ ! -f "$today".md ] && touch "$today".md
         "$EDITOR" "$today.md"
@@ -11,7 +11,7 @@ td_today()
 td_rollover()
 {
     (
-        cd "$jfs_dir_td"
+        cd "$jfs_dir_docs_td"
         local latest="$( ls -t | head -1)"
         local today="$( date +'%Y-%m-%d' )".md
         cp "$latest" "$today"
@@ -22,7 +22,7 @@ td_rollover()
 td_continue()
 {
     (
-        cd "$jfs_dir_td"
+        cd "$jfs_dir_docs_td"
         local latest="$( ls -t | head -1)"
         [ ! -f "$latest".md ] && td_today
     )
