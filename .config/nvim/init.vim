@@ -263,8 +263,8 @@ endif
 
 " ctags
 
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
+"Plug 'ludovicchabant/vim-gutentags'
+"Plug 'majutsushi/tagbar'
 
 " easymotion
 
